@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Surfshield Reference App"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/clientIdTextInputLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/clientIdTextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@id/buttons"
+        app:layout_constraintTop_toBottomOf="@id/titleText"
+        app:placeholderText="Enter Client ID (UUID)">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/clientIdEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:singleLine="true" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clientIdTextInputLayout">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fetchConnectButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fetch &amp; Connect" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/disconnectButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:text="Disconnect" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
