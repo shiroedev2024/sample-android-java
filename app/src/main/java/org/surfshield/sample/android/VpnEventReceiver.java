@@ -11,7 +11,7 @@ public class VpnEventReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         String expectedAction = context.getPackageName() + ".leaf.VPN_EVENT";
-        
+
         if (expectedAction.equals(intent.getAction())) {
             String eventType = intent.getStringExtra("eventType");
             String data = intent.getStringExtra("data");

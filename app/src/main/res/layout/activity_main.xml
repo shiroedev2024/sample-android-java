@@ -55,9 +55,9 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/disconnectButton"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:text="Disconnect" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
